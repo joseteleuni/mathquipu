@@ -24,8 +24,7 @@ class ConstruccionCuadrados(Scene):
         self.Ac2 = A - rotate_vector(cateto2, -PI/2)
         self.Ch  = C - rotate_vector(hipotenusa, PI/2)
         self.Bh  = B - rotate_vector(hipotenusa, PI/2)
-
-    
+   
     def cuadrado_pitagoras(self,pt1,pt2,pt3,pt4,colorin,v1,v2):
         cuadrado = Polygon(pt1,pt2,pt3,pt4, color=colorin)
         self.play(Create(cuadrado))
@@ -34,8 +33,7 @@ class ConstruccionCuadrados(Scene):
         self.etiqueta_2 = MathTex(v2).next_to(pt4, DOWN)
         self.play(Write(self.etiqueta_1),Write(self.etiqueta_2))
         return cuadrado
-
-    
+  
     def presentacion_inicial(self):
         titulo = Text("Demostración visual del Teorema de Pitágoras", font_size=36, color=BLUE)
         self.play(Write(titulo),run_time=2)
