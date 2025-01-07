@@ -56,6 +56,12 @@ class ConstruccionCuadrados(Scene):
         # Mover los arrays usando la función
         mover_arrays(arrays, desplazamiento)
 
+    def animar_texto(self, textos, tiempo_espera=1, tiempo_final=3):
+        for texto in textos:
+            self.play(Write(texto))
+            self.wait(tiempo_espera)
+        self.wait(tiempo_final)
+        
     def demostracion(self,A,B,C,Bc1,Bh,Cc2,Ch,cuadrado1,cuadrado2,cuadrado3):
         linea1 = Line(C, Bc1, color=WHITE)
         linea2 = Line(A, Bh, color=YELLOW)
@@ -79,20 +85,9 @@ class ConstruccionCuadrados(Scene):
         grupo = VGroup(texto_inicial ,ecuacion1,texto_intermedio0, ecuacion2,texto_intermedio, ecuacion3).scale(0.75).arrange(DOWN, buff=0.5)
         grupo.to_edge(UP + RIGHT)
 
-        # Animar la aparición de las expresiones
-        self.play(Write(texto_inicial))
-        self.wait(1)
-        self.play(Write(ecuacion1))
-        self.wait(1)
-        self.play(Write(texto_intermedio0))
-        self.wait(1)
-        self.play(Write(ecuacion2))
-        self.wait(1)
-        self.play(Write(texto_intermedio))
-        self.wait(1)
-        self.play(Write(ecuacion3))
-        self.wait(3)
-
+        textos = [texto_inicial,ecuacion1,texto_intermedio0,ecuacion2,texto_intermedio,ecuacion3]
+        self.animar_texto(textos, tiempo_espera=1, tiempo_final=3)
+        
         # Animar la desaparición de todas las expresiones
         self.play(FadeOut(grupo))
         self.wait(1)
@@ -116,20 +111,9 @@ class ConstruccionCuadrados(Scene):
         grupo = VGroup(texto_inicial ,ecuacion1,texto_intermedio0, ecuacion2, texto_intermedio ,ecuacion3).scale(0.75).arrange(DOWN, buff=0.5)
         grupo.to_edge(UP + RIGHT)
 
-        # Animar la aparición de las expresiones
-        self.play(Write(texto_inicial))
-        self.wait(1)
-        self.play(Write(ecuacion1))
-        self.wait(1)
-        self.play(Write(texto_intermedio0))
-        self.wait(1)
-        self.play(Write(ecuacion2))
-        self.wait(1)
-        self.play(Write(texto_intermedio))
-        self.wait(1)
-        self.play(Write(ecuacion3))
-        self.wait(3)
-
+        textos = [texto_inicial,ecuacion1,texto_intermedio0,ecuacion2,texto_intermedio,ecuacion3]
+        self.animar_texto(textos, tiempo_espera=1, tiempo_final=3)
+        
         # Animar la desaparición de todas las expresiones
         self.play(FadeOut(grupo))
         self.wait(1)
@@ -153,21 +137,8 @@ class ConstruccionCuadrados(Scene):
         grupo = VGroup(texto_inicial ,ecuacion1, texto_intermedio0,ecuacion2, texto_intermedio,ecuacion3,ecuacion4).scale(0.7).arrange(DOWN, buff=0.5)
         grupo.to_edge(UP + RIGHT)
 
-        # Animar la aparición de las expresiones
-        self.play(Write(texto_inicial))
-        self.wait(1)
-        self.play(Write(ecuacion1))
-        self.wait(1)
-        self.play(Write(texto_intermedio0))
-        self.wait(1)
-        self.play(Write(ecuacion2))
-        self.wait(1)
-        self.play(Write(texto_intermedio))
-        self.wait(1)
-        self.play(Write(ecuacion3))
-        self.wait(1)
-        self.play(Write(ecuacion4))
-        self.wait(3)
+        textos = [texto_inicial,ecuacion1,texto_intermedio0,ecuacion2,texto_intermedio,ecuacion3,ecuacion4]
+        self.animar_texto(textos, tiempo_espera=1, tiempo_final=3)
 
         # Animar la desaparición de todas las expresiones
         self.play(FadeOut(grupo))
