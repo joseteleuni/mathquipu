@@ -24,7 +24,8 @@ class ConstruccionCuadrados(Scene):
         self.Ac2 = A - rotate_vector(cateto2, -PI/2)
         self.Ch  = C - rotate_vector(hipotenusa, PI/2)
         self.Bh  = B - rotate_vector(hipotenusa, PI/2)
-   
+
+    
     def cuadrado_pitagoras(self,pt1,pt2,pt3,pt4,colorin,v1,v2):
         cuadrado = Polygon(pt1,pt2,pt3,pt4, color=colorin)
         self.play(Create(cuadrado))
@@ -33,7 +34,8 @@ class ConstruccionCuadrados(Scene):
         self.etiqueta_2 = MathTex(v2).next_to(pt4, DOWN)
         self.play(Write(self.etiqueta_1),Write(self.etiqueta_2))
         return cuadrado
-  
+
+    
     def presentacion_inicial(self):
         titulo = Text("Demostración visual del Teorema de Pitágoras", font_size=36, color=BLUE)
         self.play(Write(titulo),run_time=2)
@@ -127,7 +129,7 @@ class ConstruccionCuadrados(Scene):
         texto_inicial = Tex("Del gráfico y por teorema de areas:")
         ecuacion1 = MathTex(r"S(\triangle ABU)+S(\triangle ACT) = \frac{S(\square BCTU)}{2}")
         texto_intermedio0 = Tex("Como el lado del cuadrado es c :")
-        ecuacion2 = MathTex(r"S(\square BCTU) = \frac{c^2}{2}")
+        ecuacion2 = MathTex(r"S(\square BCTU) = {c^2}")
         texto_intermedio = Tex("Entonces se tiene de las ecuaciones anteriores:")
         ecuacion3 = MathTex(r"\frac{a^2}{2}+\frac{b^2}{2} = \frac{c^2}{2}")
         ecuacion4 = MathTex(r"{a^2}+{b^2} = {c^2}")
